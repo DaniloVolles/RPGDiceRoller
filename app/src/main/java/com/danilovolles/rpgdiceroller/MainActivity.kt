@@ -2,6 +2,7 @@ package com.danilovolles.rpgdiceroller
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import android.widget.Button
 import android.widget.TextView
 
@@ -39,37 +40,37 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-    fun rollD4Btn() {
+    fun rollD4Btn(view: View) {
         val result = d4.rollDie()
         rollResult.text = result.toString()
     }
 
-    fun rollD6Btn() {
+    fun rollD6Btn(view: View) {
         val result = d6.rollDie()
         rollResult.text = result.toString()
     }
 
-    fun rollD8Btn() {
+    fun rollD8Btn(view: View) {
         val result = d8.rollDie()
         rollResult.text = result.toString()
     }
 
-    fun rollD10Btn() {
+    fun rollD10Btn(view: View) {
         val result = d10.rollDie()
         rollResult.text = result.toString()
     }
 
-    fun rollD12Btn() {
+    fun rollD12Btn(view: View) {
         val result = d12.rollDie()
         rollResult.text = result.toString()
     }
 
-    fun rollD20Btn() {
+    fun rollD20Btn(view: View) {
         val result = d20.rollDie()
         rollResult.text = result.toString()
     }
 
-    fun rollD100Btn() {
+    fun rollD100Btn(view: View) {
         val result = d100.rollDie()
         rollResult.text = result.toString()
     }
