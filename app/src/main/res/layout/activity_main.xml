@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/purplyBlack"
     tools:context=".MainActivity"
     tools:layout_editor_absoluteX="-1dp"
     tools:layout_editor_absoluteY="-1dp">
@@ -12,11 +13,11 @@
         android:id="@+id/rollVisualization"
         android:layout_width="120dp"
         android:layout_height="120dp"
-        android:textAlignment="center"
-        android:textSize="34sp"
         android:background="@drawable/rounded_textview"
-        android:textColor="@color/white"
         android:gravity="center"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="34sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
@@ -28,71 +29,91 @@
         android:id="@+id/btnD4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        android:background="#301267"
+        android:onClick="rollD4Btn"
         android:text="D4"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.233"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="254dp" />
+        app:layout_constraintTop_toBottomOf="@+id/rollVisualization" />
 
     <Button
         android:id="@+id/btnD6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        android:background="#301267"
+        android:onClick="rollD6Btn"
         android:text="D6"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.791"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="254dp" />
+        app:layout_constraintTop_toBottomOf="@+id/rollVisualization" />
 
     <Button
         android:id="@+id/btnD8"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:background="#301267"
+        android:onClick="rollD8Btn"
         android:text="D8"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/btnD4"
         app:layout_constraintHorizontal_bias="0.233"
         app:layout_constraintStart_toStartOf="@+id/btnD4"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/btnD4" />
 
     <Button
         android:id="@+id/btnD10"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:background="#301267"
+        android:onClick="rollD10Btn"
         android:text="D10"
         app:layout_constraintEnd_toEndOf="@+id/btnD6"
         app:layout_constraintHorizontal_bias="0.791"
         app:layout_constraintStart_toStartOf="@+id/btnD6"
-        tools:layout_editor_absoluteY="342dp" />
+        app:layout_constraintTop_toBottomOf="@+id/btnD6" />
 
     <Button
         android:id="@+id/btnD12"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:background="#301267"
+        android:onClick="rollD12Btn"
         android:text="D12"
         app:layout_constraintEnd_toEndOf="@+id/btnD8"
         app:layout_constraintStart_toStartOf="@+id/btnD8"
-        tools:layout_editor_absoluteY="430dp" />
+        app:layout_constraintTop_toBottomOf="@+id/btnD8" />
 
     <Button
         android:id="@+id/btnD100"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:background="#301267"
+        android:onClick="rollD100Btn"
         android:text="D100"
         app:layout_constraintEnd_toEndOf="@+id/btnD10"
         app:layout_constraintHorizontal_bias="0.792"
         app:layout_constraintStart_toStartOf="@+id/btnD10"
-        tools:layout_editor_absoluteY="430dp" />
+        app:layout_constraintTop_toBottomOf="@+id/btnD10" />
 
     <Button
         android:id="@+id/btnD20"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
         android:layout_marginEnd="24dp"
+        android:background="#301267"
+        android:onClick="rollD20Btn"
         android:text="D20"
         app:layout_constraintEnd_toStartOf="@+id/btnD100"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/btnD12"
-        tools:layout_editor_absoluteY="532dp" />
+        app:layout_constraintTop_toBottomOf="@+id/btnD12" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

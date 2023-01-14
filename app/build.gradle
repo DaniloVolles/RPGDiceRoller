@@ -5,12 +5,12 @@ plugins {
 
 android {
     namespace 'com.danilovolles.rpgdiceroller'
-    compileSdk 32
+    compileSdk 33
 
     defaultConfig {
         applicationId "com.danilovolles.rpgdiceroller"
         minSdk 26
-        targetSdk 32
+        targetSdk 31
         versionCode 1
         versionName "1.0"
 
