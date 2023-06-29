@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Button
 import android.widget.TextView
+import com.danilovolles.rpgdiceroller.databinding.ActivityMainBinding
 
 val d4 = Dice(4)
 val d6 = Dice(6)
@@ -14,64 +15,43 @@ val d12 = Dice(12)
 val d20 = Dice(20)
 val d100 = Dice(100)
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity(), View.OnClickListener {
+
+    private lateinit var binding: ActivityMainBinding
 
     private lateinit var rollResult: TextView
-    private lateinit var btnD4Var: Button
-    private lateinit var btnD6Var: Button
-    private lateinit var btnD8Var: Button
-    private lateinit var btnD10Var: Button
-    private lateinit var btnD12Var: Button
-    private lateinit var btnD20Var: Button
-    private lateinit var btnD100Var: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+
+        binding.btnD4.setOnClickListener(this)
+        binding.btnD6.setOnClickListener(this)
+        binding.btnD8.setOnClickListener(this)
+        binding.btnD10.setOnClickListener(this)
+        binding.btnD12.setOnClickListener(this)
+        binding.btnD20.setOnClickListener(this)
+        binding.btnD100.setOnClickListener(this)
 
         rollResult = findViewById(R.id.rollVisualization)
-        btnD4Var = findViewById(R.id.btnD4)
-        btnD6Var = findViewById(R.id.btnD6)
-        btnD8Var = findViewById(R.id.btnD8)
-        btnD10Var = findViewById(R.id.btnD10)
-        btnD12Var = findViewById(R.id.btnD12)
-        btnD20Var = findViewById(R.id.btnD20)
-        btnD100Var = findViewById(R.id.btnD100)
 
     }
 
-    fun rollD4Btn(view: View) {
-        val result = d4.rollDie()
-        rollResult.text = result.toString()
+    override fun onClick(view: View) {
+        when(view.id) {
+            R.id.btnD4 -> showResult(d4)
+            R.id.btnD6 -> showResult(d6)
+            R.id.btnD8 -> showResult(d8)
+            R.id.btnD10 -> showResult(d10)
+            R.id.btnD12 -> showResult(d12)
+            R.id.btnD20 -> showResult(d20)
+            R.id.btnD100 -> showResult(d100)
+        }
     }
 
-    fun rollD6Btn(view: View) {
-        val result = d6.rollDie()
-        rollResult.text = result.toString()
-    }
-
-    fun rollD8Btn(view: View) {
-        val result = d8.rollDie()
-        rollResult.text = result.toString()
-    }
-
-    fun rollD10Btn(view: View) {
-        val result = d10.rollDie()
-        rollResult.text = result.toString()
-    }
-
-    fun rollD12Btn(view: View) {
-        val result = d12.rollDie()
-        rollResult.text = result.toString()
-    }
-
-    fun rollD20Btn(view: View) {
-        val result = d20.rollDie()
-        rollResult.text = result.toString()
-    }
-
-    fun rollD100Btn(view: View) {
-        val result = d100.rollDie()
-        rollResult.text = result.toString()
+    private fun showResult(die: Dice){
+        val result = die.rollDie().toString()
+        binding.rollVisualization.text = result
     }
 }
