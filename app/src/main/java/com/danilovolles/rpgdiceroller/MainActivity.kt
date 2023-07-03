@@ -3,8 +3,6 @@ package com.danilovolles.rpgdiceroller
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
-import android.widget.Button
-import android.widget.TextView
 import com.danilovolles.rpgdiceroller.databinding.ActivityMainBinding
 
 val d4 = Dice(4)
@@ -19,8 +17,6 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
     private lateinit var binding: ActivityMainBinding
 
-    private lateinit var rollResult: TextView
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
@@ -34,7 +30,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         binding.btnD20.setOnClickListener(this)
         binding.btnD100.setOnClickListener(this)
 
-        rollResult = findViewById(R.id.rollVisualization)
+        binding.rollVisualization.setOnClickListener(this)
 
     }
 
@@ -51,7 +47,6 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
     }
 
     private fun showResult(die: Dice){
-        val result = die.rollDie().toString()
-        binding.rollVisualization.text = result
+        binding.rollVisualization.text = die.rollDie().toString()
     }
 }
